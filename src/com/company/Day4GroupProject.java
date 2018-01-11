@@ -13,26 +13,37 @@ public class Day4GroupProject {
 
             //Store these questions in an Array, and use a loop to ask the user each question.
             //Use another array to store the user responses.
+       String[] prompt = {"Please enter employee first name", "Please enter employee last name", "Please enter employee number", "Please enter employee annual salary"};
+        String[] inputInformation = {"", "", "", "",};
 
-        System.out.println("Please enter employees first name");
+        int i = 0;
+        while(i < prompt.length){
+            System.out.println(prompt[i]);
+            Scanner robot = new Scanner(System.in);
+            inputInformation[i] = robot.nextLine();
+            i++;
 
-        Scanner robot = new Scanner(System.in);
+        }
 
-        String firstName = robot.nextLine();
+//        System.out.println(prompt[0]);
+//
+//        Scanner robot = new Scanner(System.in);
+//
+//        inputInformation[0] = robot.nextLine();
+//
+//        System.out.println(prompt[1]);
+//
+//        inputInformation[1] = robot.nextLine();
+//
+//        System.out.println(prompt [2]);
+//
+//        inputInformation[2] = robot.nextLine();
+//
+//        System.out.println(prompt [3]);
+//
+//        inputInformation[3] = robot.nextLine();
 
-        System.out.println("Please enter employee last name");
-
-        String lastName = robot.nextLine();
-
-        System.out.println("Please enter employee number");
-
-        String employeeField = robot.nextLine();
-
-        System.out.println("Please enter employee annual salary");
-
-        String annualSalary = robot.nextLine();
-
-        int convertedNumber = Integer.parseInt(annualSalary);
+        int convertedNumber = Integer.parseInt(inputInformation[3]);
 
         int Month = 12;
         int bimonth = 24;
@@ -51,7 +62,7 @@ public class Day4GroupProject {
         //Research how to have multiple conditions, specifically the 'or' operator. Then use that information,
         //to handle the case of 'YES', 'y', and 'Yes'.
 
-        if(answerByUser.equals("yes")) {
+        if(answerByUser.equalsIgnoreCase("yes") || answerByUser.equalsIgnoreCase("y") || answerByUser.equalsIgnoreCase("ya")) {
             ask = true;
         } else {
             ask = false;
